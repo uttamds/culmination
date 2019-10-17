@@ -12,6 +12,10 @@ function foo() {
         ourRequest.send();
         counter++;
     }
+    else
+    {
+        document.getElementById("button1").disabled = true;
+    }
 }
 
 
