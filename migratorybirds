@@ -1,0 +1,46 @@
+#include <stdio.h>
+int main()
+{
+   int n;
+   printf("\nEnter n:");
+   scanf("%d",&n);
+   int arr[n], t[n][2], u, i, j ,c =0 , tt, ttt;
+   for(i=0;i<n;i++)
+   scanf("%d" , &arr[i]);
+
+   for(i=0;i<n;i++)
+  {
+      c = 0;
+      u  = arr[i];
+
+      for(j=0;j<n;j++)
+      {
+          if(arr[i] == arr[j])
+          c++;
+      }
+      t[i][0] = u;
+      t[i][1]  = c;
+
+  }
+       /* printf("%d", t[0][1]);*/
+
+
+  tt  = 0;
+  for(i=0;i<n;i++)
+  if (t[i][1] > tt)
+    tt  = t[i][1] ;
+
+    printf(" max counted value = %d\n", tt);
+
+  ttt=6666666;
+  for(i=0;i<n;i++)
+  if (t[i][1] == tt)
+    if(t[i][1] < ttt)
+     ttt = t[i][0];
+
+
+    printf(" The winner is %d", ttt) ;
+
+
+     return 0;
+}
